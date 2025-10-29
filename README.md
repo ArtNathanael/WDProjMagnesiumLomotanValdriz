@@ -7,7 +7,9 @@ The collaborative repository for the project of Valdriz and Lomotan.
 
 2. Second Title: Composing Music Throughout the Ages 
 
-3. Logo: ![alt text](image.png)
+3. Logo: 
+
+![alt text](image.png)
 
 4. Short but Comprehensive Description of Website: An interactive website where you can make, learn, and enjoy music to the fullest. Know about the history of music and how various people and events throughout the ages shaped music’s legacy and culture until now. Compose music and collaborate with other creators to your heart’s content. Play rhythm games for fun and test your knowledge on music with our quizzes!
 
