@@ -21,7 +21,7 @@ Webpage One: Home
 
 Subtitle: Welcome to Resonus
 
-Description: A page that will have an introduction, a short description of the website itself, and then buttons or links to the other webpages. There will be a preview of the website itself, like a game or music creation tool, and a quick historical fact about music to engage users. There will be a navigation bar on top, leading to all other pages, and a short statement at the end that encourages the user to interact with the website, such as “Learn now about history.”
+Description: A page that will have an introduction, a short description of the website itself, and then buttons or links to the other webpages. There will be a preview of the website itself, like a game or music creation tool, and a quick historical fact about music to engage users. There will be a navigation bar on top, leading to all other pages, and a short statement at the end that encourages the user to interact with the website, such as “Learn now about history.” A section of the page will also have a short About Us, talking about the creators of the website, that being us.
 
 Webpage Two: Learn About Music
 
