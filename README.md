@@ -5,11 +5,9 @@ The collaborative repository for the project of Valdriz and Lomotan.
 
 1. Title: Resonus
 
-2. Second Title: Composing Music Throughout the Ages 
+2. Sub-Title: Composing Music Throughout the Ages 
 
 3. Logo: 
-
-![alt text](image.png)
 
 4. Short but Comprehensive Description of Website: An interactive website where you can make, learn, and enjoy music to the fullest. Know about the history of music and how various people and events throughout the ages shaped music’s legacy and culture until now. Compose music and collaborate with other creators to your heart’s content. Play rhythm games for fun and test your knowledge on music with our quizzes!
 
@@ -55,3 +53,11 @@ There will be feedback depending on the score the user gets and various difficul
 
 Wireframe: 
 
+
+7. Wireframes
+
+    Home Wireframe:![alt text](assets/HomeWireframe.png)
+    Learn Wireframe:![alt text](assets/LearnWireframe.png)
+    Create Wireframe:![alt text](assets/CreateWireframe.png)
+    Community Wireframe:![alt text](assets/CommunityWireframe.png)
+    Games Wireframe![alt text](assets/GamesWireframe.png)
