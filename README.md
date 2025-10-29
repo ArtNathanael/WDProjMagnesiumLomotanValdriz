@@ -59,4 +59,4 @@ Wireframe:
     Learn Wireframe:![alt text](assets/LearnWireframe.png)
     Create Wireframe:![alt text](assets/CreateWireframe.png)
     Community Wireframe:![alt text](assets/CommunityWireframe.png)
-    Games Wireframe![alt text](assets/GamesWireframe.png)
+    Games Wireframe:![alt text](assets/GamesWireframe.png)
