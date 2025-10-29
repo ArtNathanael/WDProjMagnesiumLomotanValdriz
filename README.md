@@ -51,9 +51,7 @@ There will be feedback depending on the score the user gets and various difficul
 
 7. to 9. 
 
-Wireframe: 
-
-7. Wireframes
+Wireframes:
 
     Home Wireframe:![alt text](assets/HomeWireframe.png)
     Learn Wireframe:![alt text](assets/LearnWireframe.png)
