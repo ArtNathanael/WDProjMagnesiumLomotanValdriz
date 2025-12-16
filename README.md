@@ -7,7 +7,7 @@ The collaborative repository for the project of Valdriz and Lomotan.
 
 2. Sub-Title: Composing Music Throughout the Ages 
 
-3. Logo: 
+3. Logo: ![alt text](image.png)
 
 4. Short but Comprehensive Description of Website: An interactive website where you can make, learn, and enjoy music to the fullest. Know about the history of music and how various people and events throughout the ages shaped music’s legacy and culture until now. Compose music and collaborate with other creators to your heart’s content. Play rhythm games for fun and test your knowledge on music with our quizzes!
 
@@ -49,10 +49,9 @@ There will be feedback depending on the score the user gets and various difficul
 
 6. Incorporation of JS: JavaScript will be used on the "Create Music" page to make it much more interactive and allow users to make their own rhythms. It would control the system of the page such as sound, user input, tempo, and much more. The user will be able to arrange their beats for JavaScript to store the data and play it back for the maker to hear. Additionally, the use of JavaScript will allow the user to save their own work and upload it to the "Community Creations" page. Lastly, JavaScript will be included to be used in the "Games & Quizzes" page to track player input, scores, and much more.
 
-7. to 9. 
+7.
 
 Wireframes:
-
     Home Wireframe:![alt text](assets/HomeWireframe.png)
     Learn Wireframe:![alt text](assets/LearnWireframe.png)
     Create Wireframe:![alt text](assets/CreateWireframe.png)
