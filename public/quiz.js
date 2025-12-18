@@ -1,3 +1,5 @@
+
+// This is the data of the quiz.
 const quiz = [
   {
     question: "What city was Wolfgang Amadeus Mozart born in?",
@@ -33,6 +35,7 @@ const questionElement = document.getElementById("question");
 const choicesElement = document.getElementById("choices");
 const scoreElement = document.getElementById("score");
 
+// This is the function that loads the question.
 function loadQuestion() {
   if (currentIndex >= quiz.length) {
     questionElement.textContent = "Quiz Complete!";
@@ -53,6 +56,7 @@ function loadQuestion() {
   });
 }
 
+// This function checks and records answers and score.
 function checkAnswer(selected) {
   if (selected === quiz[currentIndex].correct) {
     score++;
