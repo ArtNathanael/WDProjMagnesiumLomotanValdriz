@@ -1,0 +1,104 @@
+h1 {
+            font-family: "Dancing Script";
+            font-size: 60px;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        header {
+            padding-left: 10px;
+            padding-right: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: rgb(0, 0, 0);
+        }
+
+        header > div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav ul {
+            font-size: 20px;
+            list-style: none;
+            display: flex;  
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+    hr {
+        border: none;
+        height: 3px;
+        background-color: rgb(240, 186, 251);
+        margin: -1px;
+    }
+
+    .welcome {
+        margin-top: 40px;
+        margin-bottom: 0px;
+        padding: 0px;
+        text-align: center;
+        font-family: "Sekuya";
+        font-size: 20px;
+        background: linear-gradient(45deg, #ffffff, #ffffff); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent; 
+    }
+
+    h2.subtitle {
+        margin: 0px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        padding: 0px;
+        text-align: center;
+        font-family: "Parisienne";
+        font-size: 60px;
+        background: linear-gradient(45deg, #e9d7f1, #d873f7); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent; 
+        line-height: 1.5;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        gap: 20px;
+        padding: 20px;
+        margin: 0 15px;
+    }
+
+    .box {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        text-align: center;
+        font-family: "Rubik";
+        font-size: 18px;
+    }
+
+    .full-width { grid-column: 1 / 4; }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(255,255,255,0.7);
+        margin-top: 20px;
+        border-radius: 10px;
+        font-family: "Rubik";
+    }

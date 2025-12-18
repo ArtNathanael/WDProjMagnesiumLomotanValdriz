@@ -1,4 +1,17 @@
+body {
+            background-image: url('../assets/Background.png');
+            background-size: cover;       
+            background-repeat: no-repeat; 
+            background-position: center;  
+            background-attachment: scroll;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
         /* -- HEADER BELOW -- */
+
         h1 {
             font-family: "Dancing Script";
             font-size: 60px;
@@ -90,12 +103,14 @@
             background-color: rgba(255, 255, 255, 0.5);
             flex-wrap: wrap;
             border-radius: 8px;
+            flex-direction: row-reverse;   
+            align-items: stretch; 
         }
         
         .paragraph-box {
-            flex: 2;
+            flex: 3;
             background-color: white;
-            padding: 20px;
+            padding: 50px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -104,19 +119,19 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 20px;
         }
 
-        #aside-box {
+        .aside-box {
+            flex: 1;
             background-color: white;
-            padding: 50px;
+            padding: 40px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         aside figure, aside figcaption {
             margin: 0;
-        }
+        }   
 
         /* -- MAIN ABOVE -- */
 
@@ -130,13 +145,3 @@
             justify-content: center;
             align-items: center;
         }   
-
-        #footer-line {
-            border: none;
-            height: 3px;
-            width: 100%;
-            background-color: rgb(240, 186, 251);
-            margin-top: 60px;
-        }
-
-        /* -- FOOTER ABOVE -- */
