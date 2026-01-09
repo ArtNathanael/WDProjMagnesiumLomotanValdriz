@@ -57,3 +57,10 @@ Wireframes:
     Create Wireframe:![alt text](assets/CreateWireframe.png)
     Community Wireframe:![alt text](assets/CommunityWireframe.png)
     Games Wireframe:![alt text](assets/GamesWireframe.png)
+
+# Q3 Project Proposal Update Plan
+
+Wireframes:
+    Sign-Up Wireframe:![alt text](assets/SignUp.png)
+    Dashboard Wireframe:
+    Settings Wireframe:
