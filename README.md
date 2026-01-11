@@ -60,7 +60,9 @@ Wireframes:
 
 # Q3 Project Proposal Update Plan
 
+
+
 Wireframes:
     Sign-Up Wireframe:![alt text](assets/SignUp.png)
-    Dashboard Wireframe:
-    Settings Wireframe:
+    Dashboard Wireframe:![alt text](assets/UserDashboard.png)
+    Settings Wireframe:![alt text](assets/AccountSettings.png)
