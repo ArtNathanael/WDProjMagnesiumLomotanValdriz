@@ -62,7 +62,7 @@ Wireframes:
 
 Sign-Up Webpage: This webpage is a simple starting webpage that is present in virtually all websites. It simply asks the user for information and data so that they may create an account and save whatever progress they may have in the website. The user is asked to either sign up or log in and create an account.
 
-Dashboard Webpage: This webpage is a simple dashboard. It tracks the progress of the user's account and uses the data taken from the form to store said information in the account. Without the data taken from the form to create an account, saving progress would be impossible. In any case, it tells the activities of the account, such as recent quizzes completed, recent created compositions, and more.
+Dashboard Webpage: This webpage is a simple dashboard. It tracks the progress of the user's account and uses the data taken from the form to store said information in the account. Without the data taken from the form to create an account, saving progress would be impossible. In any case, it tells the activities of the account, such as recent quizzes completed, recent created compositions, and more. Through the Recent Activity area, users are able to access past activies through links such as going through their most recent quiz or most recent compositions.
 
 Settings Webpage: This is a simple settings webpage. You can customize how the website may be for you. Whether that be you disable sound effects, music, colors, or other things that you wish to edit. It also speaks of the account's status, simply detailing the information of the account. You can also choose to edit your account, though this is permanent and cannot be undone. The data from the form is simply used here on virtue of using the account.
 
