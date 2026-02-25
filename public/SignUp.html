@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2Q Project" />
+    <meta name="keywords" content="2Q, Projects, Rhythm, Resonus" />
+    <meta name="author" content="Lomotan & Valdriz" />
+    <link rel = "icon" href = "../assets/resonus-logo.png" type = "image/png">
     <title>Resonus || Login & Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -101,18 +106,19 @@
 
 <header>
     <div>
-        <img src="assets/resonus-logo.png" alt="Resonus Logo" width="120">
+        <img src="../assets/resonus-logo.png" alt="Resonus Logo" width="120">
         <h1>Resonus</h1>
     </div>
 
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Learn</a></li>
-            <li><a href="#">Create</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/">Home</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/LearnAboutMusic.html">Learn</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/CreateMusic.html">Create</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/Games&Quizzes.html">Games</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/CommunityCreations.html">Community</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/Dashboard.html">Dashboard</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/SignUp.html">Sign Up</a></li>
         </ul>
     </nav>
 </header>
@@ -167,53 +173,7 @@
     <p>&copy; 2026 Resonus. All rights reserved.</p>
 </footer>
 
-<script>
-    // REGISTER
-    document.getElementById("registerForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const username = document.getElementById("regUsername").value;
-        const email = document.getElementById("regEmail").value;
-        const password = document.getElementById("regPassword").value;
-
-        if(localStorage.getItem(email)) {
-            document.getElementById("registerMessage").innerHTML =
-                "<span class='error'>Account already exists!</span>";
-        } else {
-            localStorage.setItem(email, JSON.stringify({username, password}));
-            document.getElementById("registerMessage").innerHTML =
-                "<span class='success'>Registration successful!</span>";
-        }
-    });
-
-    // LOGIN
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const email = document.getElementById("loginEmail").value;
-        const password = document.getElementById("loginPassword").value;
-
-        const userData = localStorage.getItem(email);
-
-        if(!userData) {
-            document.getElementById("loginMessage").innerHTML =
-                "<span class='error'>Account not found!</span>";
-        } else {
-            const user = JSON.parse(userData);
-            if(user.password === password) {
-                document.getElementById("loginMessage").innerHTML =
-                    "<span class='success'>Login successful! Redirecting...</span>";
-                
-                setTimeout(() => {
-                    window.location.href = "Dashboard.html";
-                }, 1500);
-            } else {
-                document.getElementById("loginMessage").innerHTML =
-                    "<span class='error'>Incorrect password!</span>";
-            }
-        }
-    });
-</script>
+<script src="login.js"></script>
 
 </body>
 </html>
