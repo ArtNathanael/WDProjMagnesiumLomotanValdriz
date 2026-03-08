@@ -70,3 +70,15 @@ Wireframes:
     Sign-Up Wireframe:![alt text](assets/SignUp.png)
     Dashboard Wireframe:![alt text](assets/UserDashboard.png)
     Settings Wireframe:![alt text](assets/AccountSettings.png)
+
+
+# FINAL MODIFICATION PROPOSAL
+
+In order to maintain accuracy within the relevant data, the user may update or delete information. Updating would allow the user to adjust data and correct errors in their account while deleting would allow the user to remove any unwanted data from the storage, especially if they feel it no longer reflects their account. 
+The updating and deleting of data can mainly be seen in the Settings webpage, as that displays the account and all its information. If the user wants to change their password or update their profile or modify their account without deleting it, then they may do so. For example, they may wish to change or update a song that they have already created if they wish to refine it, such as if they received any criticism on it from the community. The Dashboard would also be updated with the progress of the account for their recent activities, and so would the leaderboard, creating comments, or even uploading a song would have the feature of updating things. Updating would also allow the tracking of quiz scores or game scores. For deletion of data, the user may delete their account, or a song that they have made, or simply anything that they may wish to delete.  
+
+Wireframes:
+    Updated Settings Wireframe: ![alt text](assets/AccountSettings2.png)
+    Updated Dashboard Wireframe: ![alt text](assets/UserDashboard2.png)
+    Updated Community Wireframe: ![alt text](assets/CommunityWireframe2.png)
+
