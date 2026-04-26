@@ -35,7 +35,7 @@ const questionElement = document.getElementById("question");
 const choicesElement = document.getElementById("choices");
 const scoreElement = document.getElementById("score");
 
-// This is the function that loads the question.
+// This is the function that loads the question
 function loadQuestion() {
   if (currentIndex >= quiz.length) {
     questionElement.textContent = "Quiz Complete!";

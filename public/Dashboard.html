@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Resonus || Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/resonus-logo.png" type="image/png">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Dancing+Script:wght@400..700&family=Parisienne&family=Rubik:wght@300..900&family=Sekuya&display=swap" rel="stylesheet">
 
@@ -21,60 +21,161 @@
             font-family: "Rubik", sans-serif;
         }
 
-        /* DASHBOARD CONTAINER */
         .dashboard-container {
-            margin: 40px;
-            padding: 30px;
+            margin: 15px;
+            padding: 25px;
             background-color: rgba(255, 255, 255, 0.5);
             border-radius: 8px;
             display: flex;
-            gap: 40px;
+            gap: 30px;
             flex-wrap: wrap;
+            align-items: stretch;
         }
 
         .left-panel {
             flex: 2;
+            background: white;
+            border-radius: 8px;
+            padding: 35px 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .welcome-name {
+            font-size: 34px;
+            margin: 0 0 4px;
+            font-family: "Rubik";
+        }
+
+        .fact-text {
+            font-style: italic;
+            color: #666;
+            font-size: 14px;
+            margin: 0 0 16px;
+        }
+
+        .notes-label {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 4px;
+            font-style: italic;
+        }
+
+        #notes {
+            width: 100%;
+            height: 150px;
+            border: 1.5px solid #ddd;
+            border-radius: 6px;
+            padding: 10px;
+            font-family: "Rubik";
+            font-size: 14px;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        #notes:focus {
+            border-color: #d873f7;
+            outline: none;
+        }
+
+        .save-notes-btn {
+            background: none;
+            border: none;
+            color: #2a9d4e;
+            font-size: 15px;
+            cursor: pointer;
+            font-family: "Rubik";
+            text-decoration: underline;
+            font-style: italic;
+            text-align: left;
+            padding: 0;
+            margin-top: 4px;
+        }
+
+        .save-notes-btn:hover { color: #1a7a38; }
+
+        .edit-profile-link {
+            display: inline-block;
+            color: #1a6fbf;
+            font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 10px;
         }
 
         .right-panel {
             flex: 1;
-            background-color: white;
-            padding: 25px;
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-
-        .notes-box {
-            background-color: white;
-            height: 200px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            padding: 15px;
-        }
-
-        .notes-box h4 {
-            margin-top: 0;
-            font-style: italic;
+            padding: 30px 35px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            min-width: 240px;
         }
 
         .right-panel h2 {
             text-align: center;
             font-family: "Parisienne";
-            font-size: 40px;
+            font-size: 36px;
+            margin: 0 0 20px;
+            color: #333;
         }
 
-        .right-panel ul {
-            font-size: 18px;
+        #activityList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        .welcome-name {
-            font-size: 35px;
+        #activityList li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1.5px solid #eee;
+            border-radius: 6px;
+            padding: 10px 14px;
+            font-size: 14px;
+            gap: 10px;
         }
 
-        .fact-text {
+        #activityList li span.act-text {
+            flex: 1;
+            color: #333;
+        }
+
+        #activityList li a.return-link {
+            color: #1a6fbf;
+            font-size: 13px;
+            text-decoration: underline;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .no-activity {
+            color: #aaa;
             font-style: italic;
-            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        #footer-line {
+            border: none;
+            height: 3px;
+            background-color: rgb(240, 186, 251);
+            margin-top: 20px;
+        }
+
+        footer {
+            display: flex;
+            height: 75px;
+            background-color: rgba(255, 255, 255, 0.5);
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -83,10 +184,9 @@
 
 <header>
     <div>
-        <img src="../assets/resonus-logo.png" width="120">
+        <img src="../assets/resonus-logo.png" alt="Resonus Logo" width="120">
         <h1>Resonus</h1>
     </div>
-
     <nav>
         <ul>
             <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/">Home</a></li>
@@ -103,32 +203,28 @@
 <hr>
 
 <section>
-    <h4 id="welcome">WELCOME TO RESONUS</h4>
+    <h4 id="welcome">✦ WELCOME TO RESONUS ✦</h4>
     <h2 id="subtitle">Your Harmony Hub</h2>
 </section>
 
 <div class="dashboard-container">
 
-    <!-- LEFT PANEL -->
     <div class="left-panel">
         <h2 class="welcome-name">Welcome, <span id="displayUsername">User</span>!</h2>
         <div class="fact-text" id="randomFact"></div>
 
-        <form>
-            <label for="notes">Notes</label><br>
-            <textarea id="notes" name="notes" rows="4" cols="50"></textarea><br>
-            <button type="button" onclick="saveContent()">Save</button>
-        </form>
+        <div class="notes-label">Notes</div>
+        <textarea id="notes" placeholder="Jot down ideas, chord progressions, lyrics…"></textarea>
+        <button class="save-notes-btn" onclick="saveNotes()">{Save Notes}</button>
+
+        <a class="edit-profile-link" href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/Settings.html">
+            Edit Profile [Leads to Settings]
+        </a>
     </div>
 
-    <br>
-
-    <!-- RIGHT PANEL -->
     <div class="right-panel">
         <h2>Recent Activity</h2>
-        <ul>
-            <li>[No Recent Activity]</li>
-        </ul>
+        <ul id="activityList"></ul>
     </div>
 
 </div>
@@ -139,49 +235,8 @@
     <p>&copy; 2026 Resonus. All rights reserved.</p>
 </footer>
 
-<script>
-    // CHECK IF USER IS LOGGED IN
-    const loggedInUser = localStorage.getItem("loggedInUser");
+<script src="dashboard.js"></script>
 
-    if(!loggedInUser) {
-        window.location.href = "SignUp.html";
-    } else {
-        document.getElementById("displayUsername").textContent = loggedInUser;
-    }
-
-    // RANDOM MUSIC FACTS
-    const facts = [
-        "The oldest known musical instrument is over 40,000 years old.",
-        "Mozart wrote his first composition at age five.",
-        "Listening to music can improve memory and focus.",
-        "Beethoven continued composing even after becoming deaf.",
-        "The piano has over 12,000 individual parts.",
-        "Music can reduce stress and lower heart rate.",
-        "The world’s longest concert lasted 639 years (and is still ongoing!)."
-    ];
-
-    function showRandomFact() {
-        const randomIndex = Math.floor(Math.random() * facts.length);
-        document.getElementById("randomFact").textContent = facts[randomIndex];
-    }
-
-    showRandomFact();
-
-     function saveContent() {
-        const content = document.getElementById("notes").value;
-        localStorage.setItem("userNotes", content);
-        alert("Content saved to your browser!");
-    }
-
-    function loadContent() {
-        const savedContent = localStorage.getItem("userNotes");
-        if (savedContent) {
-            document.getElementById("notes").value = savedContent;
-        }
-    }
-    
-    window.onload = loadContent;
-</script>
 
 </body>
 </html>
