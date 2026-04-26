@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2Q Project" />
+    <meta name="keywords" content="2Q, Projects, Rhythm, Resonus" />
+    <meta name="author" content="Lomotan & Valdriz" />
+    <link rel="icon" href="../assets/resonus-logo.png" type="image/png">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Dancing+Script:wght@400..700&family=Parisienne&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sekuya&display=swap" rel="stylesheet">
+
+    <title>Resonus || Settings</title>
+
+    <style>
+        body {
+            background-image: url('../assets/Background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: scroll;
+            margin: 0;
+            padding: 0;
+            font-family: "Rubik", Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: "Dancing Script";
+            font-size: 60px;
+            margin: 0;
+            font-weight: normal;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../public/StyleS.css">
+
+</head>
+
+<body>
+
+<header>
+    <div>
+        <img src="../assets/resonus-logo.png" alt="Resonus Logo" width="120">
+        <h1>Resonus</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/">Home</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/LearnAboutMusic.html">Learn</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/CreateMusic.html">Create</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/Games&Quizzes.html">Games</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/CommunityCreations.html">Community</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/Dashboard.html">Dashboard</a></li>
+            <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/SignUp.html">Sign Up</a></li>
+        </ul>
+    </nav>
+</header>
+
+<hr>
+
+<section>
+    <h4 id="welcome">✦ WELCOME TO RESONUS ✦</h4>
+    <h2 id="subtitle">Tune Your Profile</h2>
+</section>
+
+<div class="settings-container">
+
+    <div class="account-info-panel">
+        <h2>Account Information</h2>
+        <button class="edit-toggle" id="editToggle" onclick="toggleEdit()">{ Edit Information }</button>
+
+        <label for="setUsername">Username:</label>
+        <input type="text" id="setUsername" disabled>
+
+        <label for="setEmail">Email:</label>
+        <input type="email" id="setEmail" disabled>
+
+        <label for="setPassword">Password:</label>
+        <input type="password" id="setPassword" disabled placeholder="New password">
+
+        <label for="setConfirm">Confirm Password:</label>
+        <input type="password" id="setConfirm" disabled placeholder="Confirm new password">
+
+        <div class="btn-row">
+            <button class="btn-save" onclick="saveChanges()">Save Changes</button>
+            <button class="btn-cancel" onclick="cancelEdit()">Cancel</button>
+        </div>
+
+        <div class="msg" id="settingsMsg"></div>
+
+        <button class="btn-delete" onclick="deleteAccount()">{ Delete Account? }</button>
+    </div>
+
+    <div class="right-panels">
+
+        <div class="status-panel">
+            <h2>Account Status</h2>
+            <p>Logged in as: <span id="statusUsername">—</span></p>
+            <p>Email: <span id="statusEmail">—</span></p>
+            <p>
+                Password: <span id="statusPassword">••••••</span>
+                <button class="reveal-btn" onclick="toggleReveal()">{ Reveal Password }</button>
+            </p>
+            <p>Last Updated: <span id="lastUpdated">—</span></p>
+        </div>
+
+        <div class="prefs-panel">
+            <h2>Preferences</h2>
+
+            <div class="pref-item">
+                <input type="checkbox" id="prefTransitions">
+                <label for="prefTransitions">Disable Transitions</label>
+            </div>
+
+            <div class="pref-item">
+                <input type="checkbox" id="prefSoundEffects">
+                <label for="prefSoundEffects">Disable Sound Effects</label>
+            </div>
+
+            <div class="pref-item">
+                <input type="checkbox" id="prefDarkMode">
+                <label for="prefDarkMode">Dark Mode</label>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<hr id="footer-line">
+<footer>
+    <p id="copy">&copy; 2026 Resonus. All rights reserved.</p>
+</footer>
+
+<script src="settings.js"></script>
+
+</body>
+</html>

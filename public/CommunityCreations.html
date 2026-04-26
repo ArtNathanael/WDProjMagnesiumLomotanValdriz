@@ -8,12 +8,13 @@
     <meta name="author" content="Lomotan & Valdriz" />
     <link rel="icon" href="../assets/resonus-logo.png" type="image/png">
 
-    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Dancing+Script:wght@400..700&family=Parisienne&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sekuya&display=swap" rel="stylesheet">
 
     <title>Resonus || Community</title>
+
+    <link rel="stylesheet" href="../public/StyleCC.css">
 
     <style>
         body {
@@ -24,7 +25,7 @@
             background-attachment: scroll;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Rubik", Arial, sans-serif;
             box-sizing: border-box;
         }
 
@@ -34,21 +35,288 @@
             margin: 0;
             font-weight: normal;
         }
-    </style>
 
-    <link rel="stylesheet" href="../public/StyleCC.css">
+        .community-container {
+            display: flex;
+            gap: 20px;
+            margin: 15px;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .other-works {
+            flex: 0 0 220px;
+            background: white;
+            border-radius: 8px;
+            padding: 25px 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .other-works h3 {
+            margin: 0 0 16px;
+            font-family: "Parisienne";
+            font-size: 26px;
+        }
+
+        .composition-card-other {
+            border: 1.5px solid #eee;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+
+        .composition-card-other h4 {
+            margin: 0 0 4px;
+            font-size: 15px;
+        }
+
+        .composition-card-other .made-by {
+            font-size: 12px;
+            color: #888;
+            margin: 0 0 8px;
+        }
+
+        .btn-play-other {
+            background: none;
+            border: none;
+            color: #2a9d4e;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: "Rubik";
+            text-decoration: underline;
+            font-style: italic;
+            padding: 0;
+        }
+
+        .btn-play-other:hover { color: #1a7a38; }
+
+        .btn-reload {
+            background: none;
+            border: none;
+            color: #666;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: "Rubik";
+            text-decoration: underline;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .creations-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-width: 280px;
+        }
+
+        .creations-panel h3 {
+            margin: 0 0 12px;
+            font-size: 20px;
+            font-family: "Rubik";
+            font-weight: 700;
+        }
+
+        .your-creations-box {
+            background: white;
+            border-radius: 8px;
+            padding: 25px 30px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .composition-card-user {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1.5px solid #eee;
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            gap: 10px;
+        }
+
+        .composition-card-user h4 {
+            margin: 0;
+            font-size: 16px;
+            flex: 1;
+        }
+
+        .comp-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-play-user, .btn-edit-user {
+            background: none;
+            border: none;
+            color: #2a9d4e;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: "Rubik";
+            text-decoration: underline;
+            font-style: italic;
+            padding: 0;
+            display: block;
+        }
+
+        .btn-play-user:hover, .btn-edit-user:hover { color: #1a7a38; }
+
+        .btn-delete-comp {
+            background: none;
+            border: none;
+            color: #e05050;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: "Rubik";
+            text-decoration: underline;
+            font-style: italic;
+            padding: 0;
+        }
+
+        .btn-delete-comp:hover { color: #b00; }
+
+        .no-comps {
+            color: #aaa;
+            font-style: italic;
+            font-size: 14px;
+            text-align: center;
+            padding: 16px 0;
+        }
+
+        .upload-row {
+            background: white;
+            border-radius: 8px;
+            padding: 20px 25px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .upload-section h4 { margin: 0 0 10px; font-size: 16px; }
+        .upload-section input[type="file"] { display: none; }
+
+        .upload-label {
+            display: inline-block;
+            background: linear-gradient(45deg, #e9d7f1, #d873f7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: "Rubik";
+            font-weight: bold;
+        }
+
+        .upload-label:hover { opacity: 0.85; }
+
+        .recent-saved { flex: 1; min-width: 180px; }
+        .recent-saved h4 { margin: 0 0 10px; font-size: 16px; }
+
+        #recentSavedList { display: flex; flex-wrap: wrap; gap: 10px; }
+
+        .recent-comp-chip {
+            background: #f3e8ff;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .recent-comp-chip button {
+            background: none;
+            border: none;
+            color: #a040d0;
+            font-size: 11px;
+            cursor: pointer;
+            font-family: "Rubik";
+            text-decoration: underline;
+            padding: 0;
+        }
+
+        /* RENAME MODAL */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal-box {
+            background: white;
+            border-radius: 10px;
+            padding: 35px 40px;
+            width: 340px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .modal-box h3 {
+            margin: 0 0 18px;
+            font-family: "Parisienne";
+            font-size: 28px;
+        }
+
+        .modal-box input {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1.5px solid #ddd;
+            border-radius: 5px;
+            font-size: 15px;
+            font-family: "Rubik";
+            box-sizing: border-box;
+            margin-bottom: 18px;
+        }
+
+        .modal-box input:focus { border-color: #d873f7; outline: none; }
+
+        .modal-btns { display: flex; gap: 12px; justify-content: flex-end; }
+
+        .modal-btns button {
+            padding: 8px 20px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-family: "Rubik";
+            font-size: 14px;
+        }
+
+        .modal-save { background: linear-gradient(45deg, #e9d7f1, #d873f7); color: white; font-weight: bold; }
+        .modal-cancel { background: #eee; color: #555; }
+
+        footer {
+            display: flex;
+            margin-top: 0;
+            height: 75px;
+            background-color: rgba(255, 255, 255, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        hr { border: none; height: 3px; background-color: rgb(240, 186, 251); margin: -1px; }
+        #footer-line { border: none; height: 3px; background-color: rgb(240, 186, 251); margin-top: 20px; }
+    </style>
 </head>
 
 <body>
 
 <header>
-    <!-- Title & Logo -->
     <div>
         <img src="../assets/resonus-logo.png" alt="Resonus Logo" width="120">
         <h1>Resonus</h1>
     </div>
-
-    <!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/">Home</a></li>
@@ -65,65 +333,243 @@
 <hr>
 
 <section>
-    <h4 id="welcome"> ✦ WELCOME TO RESONUS ✦ </h4>
-    <h2 id="subtitle"> Appreciate, Create, and Collaborate Together </h2>
+    <h4 id="welcome">✦ WELCOME TO RESONUS ✦</h4>
+    <h2 id="subtitle">Appreciate, Create, and Collaborate Together</h2>
 </section>
 
-<main>
-    <!-- MAIN CONTENT BELOW -->
+<div class="community-container">
 
-    <div class="paragraph-box">
-        <h3> Featured Creations </h3>
-
-        <p>
-            Collaborate with the community! Share your music with other people. 
-            Play the music of other people and learn from them! 
-            If other creators wish, revise their music as well, and allow the revision of your music with your permission, 
-            ascending to higher heights. 
-        </p>
-
-        <p>
-            Please be respectful. Give only constructive feedback and credit inspirations. 
-            Share only music which you have actually created and make sure to save often. 
-            Simply upload your composition here and edit it as you'd like. 
-            Other people can listen, like, or comment on your work, as can you for other people.
-        </p>
-
-        <p>
-            This space is dedicated to inspiration, feedback, and musical growth.
-        </p>
+    <div class="other-works">
+        <h3>Other Works</h3>
+        <div id="otherWorksList"></div>
+        <button class="btn-reload" onclick="loadOtherWorks()">{Reload Compositions}</button>
     </div>
 
-    <!-- ASIDE SECTION BELOW -->
+    <div class="creations-panel">
 
-    <aside class="aside-column">
-
-        <div class="aside-box">
-            <h3> Latest Uploads </h3>
-            <p>
-                Recent community submissions appear here. Check out new compositions,
-                remixes, and collaborative projects.
-            </p>
+        <div class="your-creations-box">
+            <h3>Your Creations</h3>
+            <div id="userCompositionsList"></div>
         </div>
 
-        <div class="aside-box" style="margin-top:20px;">
-            <h3> Join the Community </h3>
-            <p>
-                Participate in discussions, give feedback, and connect with other
-                creators who share your passion for music.
-            </p>
+        <div class="upload-row">
+            <div class="upload-section">
+                <h4>Upload Compositions</h4>
+                <label class="upload-label" for="uploadInput">Choose File</label>
+                <input type="file" id="uploadInput" accept=".json,.mid,.midi" onchange="handleUpload(event)">
+            </div>
+            <div class="recent-saved">
+                <h4>Recent Saved Compositions</h4>
+                <div id="recentSavedList"></div>
+            </div>
         </div>
 
-    </aside>
+    </div>
+</div>
 
-    <!-- ASIDE SECTION ABOVE -->
-</main>
+<div class="modal-overlay" id="renameModal">
+    <div class="modal-box">
+        <h3>Edit Composition</h3>
+        <input type="text" id="renameInput" placeholder="New composition name">
+        <div class="modal-btns">
+            <button class="modal-cancel" onclick="closeModal()">Cancel</button>
+            <button class="modal-save" onclick="confirmRename()">Save</button>
+        </div>
+    </div>
+</div>
 
 <hr id="footer-line">
-
 <footer>
-        <p id="copy"> &copy; 2026 Resonus. All rights reserved.</p>
+    <p id="copy">&copy; 2026 Resonus. All rights reserved.</p>
 </footer>
+
+<script>
+    const loggedInUser = localStorage.getItem("loggedInUser");
+
+    function logActivity(text) {
+        const activities = JSON.parse(localStorage.getItem("recentActivity") || "[]");
+        activities.unshift({ text, time: new Date().toLocaleString() });
+        if (activities.length > 10) activities.pop();
+        localStorage.setItem("recentActivity", JSON.stringify(activities));
+    }
+
+    function getCompositions() {
+        return JSON.parse(localStorage.getItem("resonusCompositions") || "[]");
+    }
+
+    function saveCompositions(comps) {
+        localStorage.setItem("resonusCompositions", JSON.stringify(comps));
+    }
+
+    function renderUserCompositions() {
+        const comps = getCompositions();
+        const userComps = comps.filter(c => c.author === loggedInUser);
+        const list = document.getElementById("userCompositionsList");
+
+        if (userComps.length === 0) {
+            list.innerHTML = '<p class="no-comps">No compositions yet. Create one on the <a href="CreateMusic.html">Create page</a>!</p>';
+            return;
+        }
+
+        list.innerHTML = userComps.map(c => `
+            <div class="composition-card-user" id="comp-${c.id}">
+                <h4>${escapeHtml(c.name)}</h4>
+                <div class="comp-actions">
+                    <div>
+                        <button class="btn-play-user" onclick="playComposition('${c.id}')">{Play Composition}</button>
+                        <button class="btn-edit-user" onclick="openRename('${c.id}', '${escapeHtml(c.name)}')">{Edit Composition}</button>
+                    </div>
+                    <button class="btn-delete-comp" onclick="deleteComposition('${c.id}')">{Delete Composition}</button>
+                </div>
+            </div>
+        `).join("");
+    }
+
+    function loadOtherWorks() {
+        const comps = getCompositions();
+        const otherComps = comps.filter(c => c.author !== loggedInUser);
+        const list = document.getElementById("otherWorksList");
+
+        if (otherComps.length === 0) {
+            list.innerHTML = '<p class="no-comps">No community compositions yet.</p>';
+            return;
+        }
+
+        const display = otherComps.slice(0, 5);
+        list.innerHTML = display.map(c => `
+            <div class="composition-card-other">
+                <h4>${escapeHtml(c.name)}</h4>
+                <p class="made-by">made by <span style="color:#1a6fbf">${escapeHtml(c.author)}</span></p>
+                <button class="btn-play-other" onclick="playComposition('${c.id}')">{Play Composition}</button>
+            </div>
+        `).join("");
+
+        logActivity("Checked community compositions");
+    }
+
+    function renderRecentSaved() {
+        const saved = JSON.parse(localStorage.getItem("resonusSavedDrafts") || "[]");
+        const listEl = document.getElementById("recentSavedList");
+
+        if (saved.length === 0) {
+            listEl.innerHTML = '<span style="color:#aaa;font-size:13px;font-style:italic;">No saved drafts.</span>';
+            return;
+        }
+
+        listEl.innerHTML = saved.slice(0, 4).map((d, i) => `
+            <div class="recent-comp-chip">
+                ${escapeHtml(d.name)}
+                <button onclick="uploadFromDraft(${i})">Upload</button>
+            </div>
+        `).join("");
+    }
+
+    function uploadFromDraft(index) {
+        if (!loggedInUser) { alert("Please log in first."); return; }
+        const saved = JSON.parse(localStorage.getItem("resonusSavedDrafts") || "[]");
+        const draft = saved[index];
+        if (!draft) return;
+
+        const comps = getCompositions();
+        comps.push({
+            id: Date.now().toString(),
+            name: draft.name,
+            author: loggedInUser,
+            data: draft.data,
+            uploadedAt: new Date().toLocaleString()
+        });
+        saveCompositions(comps);
+        logActivity(`Uploaded composition "${draft.name}" to Community`);
+        renderUserCompositions();
+        alert(`"${draft.name}" uploaded to Community!`);
+    }
+
+    function handleUpload(event) {
+        if (!loggedInUser) { alert("Please log in first."); return; }
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const comps = getCompositions();
+            const newComp = {
+                id: Date.now().toString(),
+                name: file.name.replace(/\.[^/.]+$/, ""),
+                author: loggedInUser,
+                data: e.target.result,
+                uploadedAt: new Date().toLocaleString()
+            };
+            comps.push(newComp);
+            saveCompositions(comps);
+            logActivity(`Uploaded composition "${newComp.name}"`);
+            renderUserCompositions();
+            alert(`"${newComp.name}" uploaded successfully!`);
+        };
+        reader.readAsText(file);
+        event.target.value = "";
+    }
+
+    function deleteComposition(id) {
+        const comps = getCompositions();
+        const comp = comps.find(c => c.id === id);
+        if (!comp) return;
+        if (!confirm(`Delete "${comp.name}"? This cannot be undone.`)) return;
+
+        saveCompositions(comps.filter(c => c.id !== id));
+        logActivity(`Deleted composition "${comp.name}"`);
+        renderUserCompositions();
+    }
+
+    let renamingId = null;
+
+    function openRename(id, currentName) {
+        renamingId = id;
+        document.getElementById("renameInput").value = currentName;
+        document.getElementById("renameModal").classList.add("active");
+    }
+
+    function closeModal() {
+        renamingId = null;
+        document.getElementById("renameModal").classList.remove("active");
+    }
+
+    function confirmRename() {
+        const newName = document.getElementById("renameInput").value.trim();
+        if (!newName) { alert("Name cannot be empty."); return; }
+
+        const comps = getCompositions();
+        const comp = comps.find(c => c.id === renamingId);
+        if (!comp) { closeModal(); return; }
+
+        const oldName = comp.name;
+        comp.name = newName;
+        saveCompositions(comps);
+        logActivity(`Edited composition "${oldName}" → "${newName}"`);
+        renderUserCompositions();
+        closeModal();
+    }
+
+    function playComposition(id) {
+        const comps = getCompositions();
+        const comp = comps.find(c => c.id === id);
+        if (!comp) return;
+        localStorage.setItem("playCompositionId", id);
+        logActivity(`Checked "${comp.author}" Composition: "${comp.name}"`);
+        window.location.href = "CreateMusic.html?play=" + id;
+    }
+
+    function escapeHtml(str) {
+        return String(str)
+            .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+    }
+
+    window.onload = () => {
+        renderUserCompositions();
+        loadOtherWorks();
+        renderRecentSaved();
+    };
+</script>
 
 </body>
 </html>

@@ -6,46 +6,21 @@
 <title>Resonus || Create</title>
 <link rel="icon" href="../assets/resonus-logo.png" type="image/png">
 
-<!-- FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Dancing+Script:wght@400..700&family=Parisienne&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sekuya&display=swap" rel="stylesheet">
 
-<style>
-    body {
-        background-image: url('../assets/Background.png');
-        background-size: cover;       
-        background-repeat: no-repeat; 
-        background-position: center;  
-        background-attachment: scroll;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        box-sizing: border-box;
-    }
-
-    h1 {
-        font-family: "Dancing Script";
-        font-size: 60px;
-        margin: 0;
-        font-weight: normal;
-    }
-    </style>
-
 <link rel="stylesheet" href="../public/StyleCM.css">
+
 </head>
 
 <body>
 
 <header>
-    <!-- Title & Logo -->
     <div>
         <img src="../assets/resonus-logo.png" alt="Resonus Logo" width="120">
-        <h1> Resonus </h1> 
+        <h1>Resonus</h1>
     </div>
-
-    <!-- Navigation Bar -->
-
     <nav>
         <ul>
             <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/">Home</a></li>
@@ -57,47 +32,103 @@
             <li><a href="https://artnathanael.github.io/WDProjMagnesiumLomotanValdriz/public/SignUp.html">Sign Up</a></li>
         </ul>
     </nav>
-
-    <!-- Navigation Bar -->
-
 </header>
 
 <hr>
 
 <section>
-    <h4 class="welcome"> ✦ WELCOME TO RESONUS ✦ </h4>
-    <h2 class="subtitle"> Compose Your Own Resonance </h2>
+    <h4 class="welcome">✦ WELCOME TO RESONUS ✦</h4>
+    <h2 class="subtitle">Compose Your Own Resonance</h2>
 </section>
 
-
 <main>
-    <div class="box">Switch Instruments</div>
-    <div class="box">
-        Interactive Beat Sequencer
 
-        <p> 
-            If you feel like composing your own music, this should be enough for you! 
-            Choose the instruments you would like to use, whether it be the piano or perhaps the harp. 
-            In fact, this is also tailored to your own tastes. 
-            Prefer specific genres of music? 
-            Perhaps inspired by those composers of history and feeling like you want to compose 
-            music more reminiscent of other times.
-        </p>
+    <div class="panel" id="instrumentPanel">
+        <h3>Switch Instruments</h3>
+        <button class="instr-btn active" onclick="selectInstrument('piano', this)">🎹 Piano</button>
+        <button class="instr-btn" onclick="selectInstrument('marimba', this)">🪘 Marimba</button>
+        <button class="instr-btn" onclick="selectInstrument('harp', this)">🎵 Harp</button>
+        <button class="instr-btn" onclick="selectInstrument('organ', this)">🎷 Organ</button>
+        <button class="instr-btn" onclick="selectInstrument('flute', this)">🪈 Flute</button>
+        <button class="instr-btn" onclick="selectInstrument('drums', this)">🥁 Drums</button>
 
-        <p>
-            Don't overthink this or be scared if the music is not good enough. 
-            Simply experiment and have fun and learn! As a simple tutorial to get you started, 
-            use the play button to review your composition, and the stop button to stop it. 
-            You can adjust the tempo and keys using the controls below. Click notes to add them to the timeline. 
-            Experiment with the instruments and learn the rest at your own pace!
-        </p>
+        <h4>Period Preset</h4>
+        <select class="period-select" onchange="applyPeriodPreset(this.value)">
+            <option value="">— Select Era —</option>
+            <option value="medieval">Medieval</option>
+            <option value="baroque">Baroque</option>
+            <option value="classical">Classical</option>
+            <option value="romantic">Romantic</option>
+            <option value="jazz">Jazz</option>
+            <option value="modern">Modern</option>
+        </select>
     </div>
-    <div class="box">Creations</div>
-    <div class="box full-width">Switch Periods of Time</div>
+
+    <div class="panel" id="sequencerPanel">
+        <h3>Interactive Beat Sequencer</h3>
+
+        <div class="seq-controls">
+            <button class="ctrl-btn" id="playBtn" onclick="togglePlay()">▶ Play</button>
+            <button class="ctrl-btn" id="stopBtn" onclick="stopSeq()">■ Stop</button>
+            <button class="ctrl-btn" id="clearBtn" onclick="clearGrid()">✕ Clear</button>
+
+            <div class="tempo-wrap">
+                <span>Tempo:</span>
+                <input type="range" id="tempoSlider" min="60" max="180" value="120" oninput="updateTempo(this.value)">
+                <span id="tempoDisplay">120 BPM</span>
+            </div>
+
+            <div class="key-wrap">
+                <span>Key:</span>
+                <select id="keySelect" onchange="updateKey(this.value)">
+                    <option value="C">C Major</option>
+                    <option value="G">G Major</option>
+                    <option value="D">D Major</option>
+                    <option value="A">A Major</option>
+                    <option value="F">F Major</option>
+                    <option value="Am">A Minor</option>
+                    <option value="Em">E Minor</option>
+                    <option value="Dm">D Minor</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="step-numbers" id="stepNumbers"></div>
+        <div id="gridWrapper">
+            <div class="step-numbers" id="stepNumbers"></div>
+            <div id="seqGrid"></div>
+        </div>
+    </div>
+
+    <div class="panel" id="creationsPanel">
+        <h3>Creations</h3>
+
+        <div class="save-form">
+            <input type="text" id="compNameInput" placeholder="Composition name…">
+            <button class="btn-save-comp" onclick="saveComposition()">Save Composition</button>
+        </div>
+        <div class="comp-msg" id="compMsg"></div>
+
+        <h4>Saved Drafts</h4>
+        <div class="saved-list" id="savedList"></div>
+    </div>
+
+    <div class="panel" id="periodPanel">
+        <strong style="font-size:14px;color:#555;margin-right:6px;">Switch Periods of Time:</strong>
+        <button class="period-pill active" onclick="selectPeriod('medieval', this)">Medieval</button>
+        <button class="period-pill" onclick="selectPeriod('baroque', this)">Baroque</button>
+        <button class="period-pill" onclick="selectPeriod('classical', this)">Classical</button>
+        <button class="period-pill" onclick="selectPeriod('romantic', this)">Romantic</button>
+        <button class="period-pill" onclick="selectPeriod('jazz', this)">Jazz</button>
+        <button class="period-pill" onclick="selectPeriod('modern', this)">Modern</button>
+    </div>
+
 </main>
 
-<footer> 
-    <p id="copy"> &copy; 2026 Resonus. All rights reserved.</p>
+<script src="music.js"></script>
+
+<footer>
+    <p id="copy">&copy; 2026 Resonus. All rights reserved.</p>
 </footer>
 
 </body>

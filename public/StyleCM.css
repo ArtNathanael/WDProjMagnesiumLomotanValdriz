@@ -1,104 +1,243 @@
-h1 {
-            font-family: "Dancing Script";
-            font-size: 60px;
-            margin: 0;
-            font-weight: normal;
-        }
+* { box-sizing: border-box; }
 
-        header {
-            padding-left: 10px;
-            padding-right: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            color: rgb(0, 0, 0);
-        }
-
-        header > div {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        nav ul {
-            font-size: 20px;
-            list-style: none;
-            display: flex;  
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li a {
-            color: #000000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-    hr {
-        border: none;
-        height: 3px;
-        background-color: rgb(240, 186, 251);
-        margin: -1px;
+    body {
+        background-image: url('../assets/Background.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll;
+        margin: 0; padding: 0;
+        font-family: "Rubik", Arial, sans-serif;
     }
 
-    .welcome {
-        margin-top: 40px;
-        margin-bottom: 0px;
-        padding: 0px;
-        text-align: center;
-        font-family: "Sekuya";
-        font-size: 20px;
-        background: linear-gradient(45deg, #ffffff, #ffffff); 
-        -webkit-background-clip: text; 
-        -webkit-text-fill-color: transparent; 
-    }
+    h1 { font-family: "Dancing Script"; font-size: 60px; margin: 0; font-weight: normal; }
 
-    h2.subtitle {
-        margin: 0px;
-        margin-top: 0px;
-        margin-bottom: 10px;
-        padding: 0px;
-        text-align: center;
-        font-family: "Parisienne";
-        font-size: 60px;
-        background: linear-gradient(45deg, #e9d7f1, #d873f7); 
-        -webkit-background-clip: text; 
-        -webkit-text-fill-color: transparent; 
-        line-height: 1.5;
+    header {
+        padding: 0 15px 0 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(255,255,255,0.8);
     }
+    header > div { display: flex; align-items: center; gap: 15px; }
+    nav ul { font-size: 20px; list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+    nav ul li a { color: #000; text-decoration: none; font-weight: bold; }
+    nav ul li a:hover { text-decoration: underline; }
+
+    hr { border: none; height: 3px; background-color: rgb(240,186,251); margin: -1px; }
+
+    .welcome { margin-top: 40px; margin-bottom: 0; text-align: center; font-family: "Sekuya"; font-size: 20px;
+        background: linear-gradient(45deg,#fff,#fff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    h2.subtitle { margin: 0 0 10px; text-align: center; font-family: "Parisienne"; font-size: 60px;
+        background: linear-gradient(45deg,#e9d7f1,#d873f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1.5; }
 
     main {
         display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
-        grid-template-rows: auto auto 1fr auto;
-        gap: 20px;
-        padding: 20px;
-        margin: 0 15px;
+        grid-template-columns: 180px 1fr 200px;
+        grid-template-rows: auto auto;
+        gap: 16px;
+        padding: 16px;
+        margin: 0 10px;
     }
 
-    .box {
-        background-color: white;
-        padding: 20px;
+    .panel {
+        background: white;
         border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        padding: 18px;
         font-family: "Rubik";
-        font-size: 18px;
+        overflow: visible;
     }
 
-    .full-width { grid-column: 1 / 4; }
+    .panel h3 { margin: 0 0 14px; font-size: 16px; font-weight: 700; color: #333; }
+    .panel h4 { margin: 12px 0 6px; font-size: 14px; color: #555; }
 
-    footer {
+    #instrumentPanel { grid-column: 1; grid-row: 1; }
+
+    .instr-btn {
+        width: 100%;
+        padding: 10px 0;
+        margin-bottom: 8px;
+        border: 2px solid #e9d7f1;
+        border-radius: 8px;
+        background: white;
+        cursor: pointer;
+        font-family: "Rubik";
+        font-size: 14px;
+        font-weight: 600;
+        color: #444;
+        transition: all 0.15s;
+    }
+    .instr-btn:hover { background: #f3e8ff; border-color: #d873f7; }
+    .instr-btn.active { background: linear-gradient(135deg,#e9d7f1,#d873f7); color: white; border-color: #d873f7; }
+
+    .period-select {
+        width: 100%;
+        margin-top: 10px;
+        padding: 7px;
+        border: 2px solid #e9d7f1;
+        border-radius: 6px;
+        font-family: "Rubik";
+        font-size: 13px;
+        cursor: pointer;
+    }
+
+    #sequencerPanel { grid-column: 2; grid-row: 1; min-width: 0; }
+
+    .seq-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 14px;
+        flex-wrap: wrap;
+    }
+
+    .ctrl-btn {
+        padding: 8px 18px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: "Rubik";
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    #playBtn { background: linear-gradient(45deg,#e9d7f1,#d873f7); color: white; }
+    #stopBtn { background: #eee; color: #555; }
+    #clearBtn { background: #fff3f3; color: #e05050; border: 1px solid #f5c0c0; }
+
+    .tempo-wrap { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #555; }
+    #tempoSlider { width: 90px; accent-color: #d873f7; }
+    #tempoDisplay { font-weight: 700; color: #333; min-width: 42px; }
+
+    .key-wrap { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #555; }
+    #keySelect { padding:   5px; border: 1.5px solid #ddd; border-radius: 5px; font-family: "Rubik"; font-size: 13px; }
+
+    #gridWrapper { 
+        overflow-x: auto; 
+        overflow-y: hidden; 
+        width: 100%;
+    }
+
+    #seqGrid {
+        display: grid;
+        gap: 3px;
+        width: max-content;
+    }
+
+    .row-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: #888;
+        display: flex;
+        align-items: center;
+        padding-right: 6px;
+        min-width: 40px;
+    }
+
+    .seq-cell {
+        width: 32px;
+        height: 32px;
+        border-radius: 4px;
+        background: #f0e8ff;
+        border: 1.5px solid #ddd;
+        cursor: pointer;
+        transition: background 0.1s, transform 0.1s;
+    }
+
+    .seq-cell:hover { background: #dfc5ff; }
+    .seq-cell.active { background: linear-gradient(135deg,#d873f7,#a040d0); border-color: #a040d0; }
+    .seq-cell.playing { transform: scaleY(1.15); background: #ff99f0 !important; border-color: #cc00cc !important; }
+    .seq-cell.beat-marker { border-left: 2px solid #d873f7; }
+
+    .step-numbers {
+        display: flex;
+        gap: 3px;
+        margin-bottom: 4px;
+        padding-left: 46px;
+        width: max-content;
+    }
+
+    .step-num {
+        width: 32px;
         text-align: center;
-        padding: 20px;
-        background-color: rgba(255,255,255,0.7);
-        margin-top: 20px;
-        border-radius: 10px;
+        font-size: 10px;
+        color: #bbb;
+        font-weight: 700;
+        flex-shrink: 0;
+    }
+
+    #creationsPanel { grid-column: 3; grid-row: 1; }
+
+    .save-form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .save-form input {
+        padding: 8px 10px;
+        border: 1.5px solid #ddd;
+        border-radius: 6px;
+        font-family: "Rubik";
+        font-size: 13px;
+    }
+    .save-form input:focus { border-color: #d873f7; outline: none; }
+
+    .btn-save-comp {
+        padding: 9px;
+        background: linear-gradient(45deg,#e9d7f1,#d873f7);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-family: "Rubik";
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    .btn-save-comp:hover { opacity: 0.85; }
+
+    .comp-msg { font-size: 12px; text-align: center; min-height: 16px; color: #2a9d4e; }
+
+    .saved-list { display: flex; flex-direction: column; gap: 8px; }
+
+    .saved-item {
+        border: 1.5px solid #eee;
+        border-radius: 6px;
+        padding: 10px;
+    }
+
+    .saved-item-name { font-weight: 700; font-size: 14px; margin-bottom: 6px; color: #333; }
+    .saved-item-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .sa-btn {
+        font-size: 12px;
+        padding: 4px 9px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
         font-family: "Rubik";
     }
+    .sa-load { background: #e0f4ea; color: #2a9d4e; }
+    .sa-delete { background: #fff0f0; color: #e05050; }
+    .sa-community { background: #e8f0ff; color: #1a6fbf; }
+
+    #periodPanel { grid-column: 1 / 4; grid-row: 2; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+    .period-pill {
+        padding: 9px 20px;
+        border-radius: 20px;
+        border: 2px solid #e9d7f1;
+        background: white;
+        font-family: "Rubik";
+        font-size: 13px;
+        cursor: pointer;
+        font-weight: 600;
+        color: #555;
+        transition: all 0.15s;
+    }
+    .period-pill:hover { background: #f3e8ff; border-color: #d873f7; }
+    .period-pill.active { background: linear-gradient(45deg,#e9d7f1,#d873f7); color: white; border-color: #d873f7; }
+
+    footer { text-align: center; padding: 20px; background: rgba(255,255,255,0.7); margin-top: 16px; font-family: "Rubik"; }
